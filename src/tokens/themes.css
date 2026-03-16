@@ -1,0 +1,326 @@
+/* ============================================================
+   THEMES — Modern (light)
+   Tokens semânticos que apontam para os primitives.
+   Usar estes nos componentes, nunca os primitives diretamente.
+   ============================================================ */
+
+@theme inline {
+
+  /* ── Background — uso: bg-bg-brand, bg-bg-success... ── */
+  --color-bg-white:                    var(--bg-white);
+  --color-bg-neutral-primary-soft:     var(--bg-neutral-primary-soft);
+  --color-bg-neutral-primary:          var(--bg-neutral-primary);
+  --color-bg-neutral-primary-medium:   var(--bg-neutral-primary-medium);
+  --color-bg-neutral-primary-strong:   var(--bg-neutral-primary-strong);
+  --color-bg-neutral-secondary-soft:   var(--bg-neutral-secondary-soft);
+  --color-bg-neutral-secondary:        var(--bg-neutral-secondary);
+  --color-bg-neutral-secondary-medium: var(--bg-neutral-secondary-medium);
+  --color-bg-neutral-secondary-strong: var(--bg-neutral-secondary-strong);
+  --color-bg-neutral-tertiary-soft:    var(--bg-neutral-tertiary-soft);
+  --color-bg-neutral-tertiary:         var(--bg-neutral-tertiary);
+  --color-bg-neutral-tertiary-medium:  var(--bg-neutral-tertiary-medium);
+  --color-bg-neutral-quaternary:       var(--bg-neutral-quaternary);
+  --color-bg-quaternary-medium:        var(--bg-quaternary-medium);
+  --color-bg-gray:                     var(--bg-gray);
+  --color-bg-brand-softer:             var(--bg-brand-softer);
+  --color-bg-brand-soft:               var(--bg-brand-soft);
+  --color-bg-brand:                    var(--bg-brand);
+  --color-bg-brand-medium:             var(--bg-brand-medium);
+  --color-bg-brand-strong:             var(--bg-brand-strong);
+  --color-bg-success-soft:             var(--bg-success-soft);
+  --color-bg-success:                  var(--bg-success);
+  --color-bg-success-medium:           var(--bg-success-medium);
+  --color-bg-success-strong:           var(--bg-success-strong);
+  --color-bg-danger-soft:              var(--bg-danger-soft);
+  --color-bg-danger:                   var(--bg-danger);
+  --color-bg-danger-medium:            var(--bg-danger-medium);
+  --color-bg-danger-strong:            var(--bg-danger-strong);
+  --color-bg-warning-soft:             var(--bg-warning-soft);
+  --color-bg-warning:                  var(--bg-warning);
+  --color-bg-warning-medium:           var(--bg-warning-medium);
+  --color-bg-warning-strong:           var(--bg-warning-strong);
+  --color-bg-dark:                     var(--bg-dark);
+  --color-bg-dark-strong:              var(--bg-dark-strong);
+  --color-bg-disabled:                 var(--bg-disabled);
+  --color-bg-purple:                   var(--bg-purple);
+  --color-bg-sky:                      var(--bg-sky);
+  --color-bg-teal:                     var(--bg-teal);
+  --color-bg-pink:                     var(--bg-pink);
+  --color-bg-cyan:                     var(--bg-cyan);
+  --color-bg-fuchsia:                  var(--bg-fuchsia);
+  --color-bg-indigo:                   var(--bg-indigo);
+  --color-bg-orange:                   var(--bg-orange);
+  --color-bg-info-softer:              var(--bg-info-softer);
+  --color-bg-info-soft:                var(--bg-info-soft);
+  --color-bg-info-medium:              var(--bg-info-medium);
+  --color-bg-info:                     var(--bg-info);
+  --color-bg-info-strong:              var(--bg-info-strong);
+
+  /* ── Texto — uso: text-text-heading, text-text-fg-brand... ── */
+  --color-text-white:                  var(--text-white);
+  --color-text-black:                  var(--text-black);
+  --color-text-heading:                var(--text-heading);
+  --color-text-body:                   var(--text-body);
+  --color-text-body-subtle:            var(--text-body-subtle);
+  --color-text-fg-brand-subtle:        var(--text-fg-brand-subtle);
+  --color-text-fg-brand:               var(--text-fg-brand);
+  --color-text-fg-brand-strong:        var(--text-fg-brand-strong);
+  --color-text-fg-success:             var(--text-fg-success);
+  --color-text-fg-success-strong:      var(--text-fg-success-strong);
+  --color-text-fg-danger:              var(--text-fg-danger);
+  --color-text-fg-danger-strong:       var(--text-fg-danger-strong);
+  --color-text-fg-warning-subtle:      var(--text-fg-warning-subtle);
+  --color-text-fg-warning:             var(--text-fg-warning);
+  --color-text-fg-yellow:              var(--text-fg-yellow);
+  --color-text-fg-info:                var(--text-fg-info);
+  --color-text-fg-disabled:            var(--text-fg-disabled);
+  --color-text-fg-purple:              var(--text-fg-purple);
+  --color-text-fg-cyan:                var(--text-fg-cyan);
+  --color-text-fg-indigo:              var(--text-fg-indigo);
+  --color-text-fg-infos:               var(--text-fg-infos);
+  --color-text-fg-infos-strong:        var(--text-fg-infos-strong);
+
+  /* ── Borda — uso: border-border-default, border-border-brand... ── */
+  --color-border-dark:                 var(--border-dark);
+  --color-border-buffer:               var(--border-buffer);
+  --color-border-muted:                var(--border-muted);
+  --color-border-light-subtle:         var(--border-light-subtle);
+  --color-border-light:                var(--border-light);
+  --color-border-light-medium:         var(--border-light-medium);
+  --color-border-default-subtle:       var(--border-default-subtle);
+  --color-border-default:              var(--border-default);
+  --color-border-default-medium:       var(--border-default-medium);
+  --color-border-default-strong:       var(--border-default-strong);
+  --color-border-success-subtle:       var(--border-success-subtle);
+  --color-border-success:              var(--border-success);
+  --color-border-danger-subtle:        var(--border-danger-subtle);
+  --color-border-danger:               var(--border-danger);
+  --color-border-warning-subtle:       var(--border-warning-subtle);
+  --color-border-warning:              var(--border-warning);
+  --color-border-brand-subtle:         var(--border-brand-subtle);
+  --color-border-brand-light:          var(--border-brand-light);
+  --color-border-brand:                var(--border-brand);
+  --color-border-purple:               var(--border-purple);
+  --color-border-orange:               var(--border-orange);
+  --color-border-blue-subtle:          var(--border-blue-subtle);
+  --color-border-blue-light:           var(--border-blue-light);
+  --color-border-blue:                 var(--border-blue);
+
+  /* ── Spacing — uso: w-5, h-6, size-5, p-3, gap-2... ── */
+  --spacing-0:                         var(--primitive-spacing-0);
+  --spacing-px:                        var(--primitive-spacing-px);
+  --spacing-0-5:                       var(--primitive-spacing-0-5);
+  --spacing-1:                         var(--primitive-spacing-1);
+  --spacing-1-5:                       var(--primitive-spacing-1-5);
+  --spacing-2:                         var(--primitive-spacing-2);
+  --spacing-2-5:                       var(--primitive-spacing-2-5);
+  --spacing-3:                         var(--primitive-spacing-3);
+  --spacing-3-5:                       var(--primitive-spacing-3-5);
+  --spacing-4:                         var(--primitive-spacing-4);
+  --spacing-4-5:                       var(--primitive-spacing-4-5);
+  --spacing-5:                         var(--primitive-spacing-5);
+  --spacing-6:                         var(--primitive-spacing-6);
+  --spacing-7:                         var(--primitive-spacing-7);
+  --spacing-8:                         var(--primitive-spacing-8);
+  --spacing-9:                         var(--primitive-spacing-9);
+  --spacing-10:                        var(--primitive-spacing-10);
+  --spacing-11:                        var(--primitive-spacing-11);
+  --spacing-12:                        var(--primitive-spacing-12);
+  --spacing-14:                        var(--primitive-spacing-14);
+  --spacing-16:                        var(--primitive-spacing-16);
+  --spacing-20:                        var(--primitive-spacing-20);
+  --spacing-24:                        var(--primitive-spacing-24);
+  --spacing-28:                        var(--primitive-spacing-28);
+  --spacing-32:                        var(--primitive-spacing-32);
+  --spacing-36:                        var(--primitive-spacing-36);
+  --spacing-40:                        var(--primitive-spacing-40);
+  --spacing-44:                        var(--primitive-spacing-44);
+  --spacing-48:                        var(--primitive-spacing-48);
+  --spacing-52:                        var(--primitive-spacing-52);
+  --spacing-56:                        var(--primitive-spacing-56);
+  --spacing-60:                        var(--primitive-spacing-60);
+  --spacing-64:                        var(--primitive-spacing-64);
+  --spacing-72:                        var(--primitive-spacing-72);
+  --spacing-80:                        var(--primitive-spacing-80);
+  --spacing-96:                        var(--primitive-spacing-96);
+
+  /* ── Line Height — uso: leading-4, leading-6... ── */
+  --leading-none:                      var(--primitive-leading-none);
+  --leading-3:                         var(--primitive-leading-3);
+  --leading-4:                         var(--primitive-leading-4);
+  --leading-5:                         var(--primitive-leading-5);
+  --leading-6:                         var(--primitive-leading-6);
+  --leading-7:                         var(--primitive-leading-7);
+  --leading-8:                         var(--primitive-leading-8);
+  --leading-9:                         var(--primitive-leading-9);
+  --leading-10:                        var(--primitive-leading-10);
+  --leading-heading:                   var(--primitive-leading-heading);
+
+  /* ── Letter Spacing — uso: tracking-tight, tracking-wide... ── */
+  --tracking-tighter:                  var(--primitive-tracking-tighter);
+  --tracking-tight:                    var(--primitive-tracking-tight);
+  --tracking-normal:                   var(--primitive-tracking-normal);
+  --tracking-wide:                     var(--primitive-tracking-wide);
+  --tracking-wider:                    var(--primitive-tracking-wider);
+  --tracking-widest:                   var(--primitive-tracking-widest);
+
+  /* ── Tipografia ── */
+  --font-sans:                         var(--font-family-base);
+
+  /* ── Font Size — uso: text-xs, text-sm, text-base... ── */
+  --text-xxs:                          var(--primitive-font-size-xxs);
+  --text-xs:                           var(--primitive-font-size-xs);
+  --text-sm:                           var(--primitive-font-size-sm);
+  --text-base:                         var(--primitive-font-size-base);
+  --text-lg:                           var(--primitive-font-size-lg);
+  --text-xl:                           var(--primitive-font-size-xl);
+  --text-2xl:                          var(--primitive-font-size-2xl);
+  --text-3xl:                          var(--primitive-font-size-3xl);
+  --text-4xl:                          var(--primitive-font-size-4xl);
+  --text-5xl:                          var(--primitive-font-size-5xl);
+  --text-6xl:                          var(--primitive-font-size-6xl);
+  --text-7xl:                          var(--primitive-font-size-7xl);
+  --text-8xl:                          var(--primitive-font-size-8xl);
+  --text-9xl:                          var(--primitive-font-size-9xl);
+
+  /* ── Font Weight — uso: font-thin, font-normal, font-bold... ── */
+  --font-weight-thin:                  var(--primitive-font-weight-thin);
+  --font-weight-extralight:            var(--primitive-font-weight-extralight);
+  --font-weight-light:                 var(--primitive-font-weight-light);
+  --font-weight-normal:                var(--primitive-font-weight-normal);
+  --font-weight-medium:                var(--primitive-font-weight-medium);
+  --font-weight-semibold:              var(--primitive-font-weight-semibold);
+  --font-weight-bold:                  var(--primitive-font-weight-bold);
+  --font-weight-extrabold:             var(--primitive-font-weight-extrabold);
+  --font-weight-black:                 var(--primitive-font-weight-black);
+
+  /* ── Border Radius — uso: rounded-fig-0, rounded-fig-base... ── */
+  --radius-fig-0:                      var(--primitive-radius-0);
+  --radius-fig-xxs:                    var(--primitive-radius-xxs);
+  --radius-fig-xs:                     var(--primitive-radius-xs);
+  --radius-fig-sm:                     var(--primitive-radius-sm);
+  --radius-fig:                        var(--primitive-radius);
+  --radius-fig-base:                   var(--primitive-radius-base);
+  --radius-fig-lg:                     var(--primitive-radius-lg);
+  --radius-fig-xl:                     var(--primitive-radius-xl);
+  --radius-fig-full:                   var(--primitive-radius-full);
+}
+
+/* ── Light mode ── */
+:root {
+  /* Background */
+  --bg-white:                     var(--primitive-white);
+  --bg-neutral-primary-soft:      var(--primitive-white);
+  --bg-neutral-primary:           var(--primitive-white);
+  --bg-neutral-primary-medium:    var(--primitive-white);
+  --bg-neutral-primary-strong:    var(--primitive-white);
+  --bg-neutral-secondary-soft:    var(--primitive-gray-050);
+  --bg-neutral-secondary:         var(--primitive-gray-050);
+  --bg-neutral-secondary-medium:  var(--primitive-gray-050);
+  --bg-neutral-secondary-strong:  var(--primitive-gray-050);
+  --bg-neutral-tertiary-soft:     var(--primitive-gray-100);
+  --bg-neutral-tertiary:          var(--primitive-gray-100);
+  --bg-neutral-tertiary-medium:   var(--primitive-gray-100);
+  --bg-neutral-quaternary:        var(--primitive-gray-200);
+  --bg-quaternary-medium:         var(--primitive-gray-200);
+  --bg-gray:                      var(--primitive-gray-300);
+  --bg-brand-softer:              var(--primitive-brand-050);
+  --bg-brand-soft:                var(--primitive-brand-100);
+  --bg-brand:                     var(--primitive-brand-500);
+  --bg-brand-medium:              var(--primitive-brand-200);
+  --bg-brand-strong:              var(--primitive-brand-800);
+  --bg-success-soft:              var(--primitive-emerald-050);
+  --bg-success:                   var(--primitive-emerald-700);
+  --bg-success-medium:            var(--primitive-emerald-100);
+  --bg-success-strong:            var(--primitive-emerald-800);
+  --bg-danger-soft:               var(--primitive-rose-050);
+  --bg-danger:                    var(--primitive-rose-700);
+  --bg-danger-medium:             var(--primitive-rose-100);
+  --bg-danger-strong:             var(--primitive-rose-800);
+  --bg-warning-soft:              var(--primitive-orange-050);
+  --bg-warning:                   var(--primitive-orange-500);
+  --bg-warning-medium:            var(--primitive-orange-100);
+  --bg-warning-strong:            var(--primitive-orange-700);
+  --bg-dark:                      var(--primitive-gray-800);
+  --bg-dark-strong:               var(--primitive-gray-900);
+  --bg-disabled:                  var(--primitive-gray-100);
+  --bg-purple:                    var(--primitive-purple-500);
+  --bg-sky:                       var(--primitive-sky-500);
+  --bg-teal:                      var(--primitive-teal-600);
+  --bg-pink:                      var(--primitive-pink-600);
+  --bg-cyan:                      var(--primitive-cyan-500);
+  --bg-fuchsia:                   var(--primitive-fuchsia-600);
+  --bg-indigo:                    var(--primitive-indigo-600);
+  --bg-orange:                    var(--primitive-orange-400);
+  --bg-info-softer:               var(--primitive-blue-050);
+  --bg-info-soft:                 var(--primitive-blue-100);
+  --bg-info-medium:               var(--primitive-blue-200);
+  --bg-info:                      var(--primitive-blue-700);
+  --bg-info-strong:               var(--primitive-blue-800);
+
+  /* Texto */
+  --text-white:                   var(--primitive-white);
+  --text-black:                   var(--primitive-gray-900);
+  --text-heading:                 var(--primitive-gray-900);
+  --text-body:                    var(--primitive-gray-600);
+  --text-body-subtle:             var(--primitive-gray-500);
+  --text-fg-brand-subtle:         var(--primitive-brand-200);
+  --text-fg-brand:                var(--primitive-brand-500);
+  --text-fg-brand-strong:         var(--primitive-brand-900);
+  --text-fg-success:              var(--primitive-emerald-700);
+  --text-fg-success-strong:       var(--primitive-emerald-900);
+  --text-fg-danger:               var(--primitive-rose-700);
+  --text-fg-danger-strong:        var(--primitive-rose-900);
+  --text-fg-warning-subtle:       var(--primitive-orange-600);
+  --text-fg-warning:              var(--primitive-orange-900);
+  --text-fg-yellow:               var(--primitive-yellow-400);
+  --text-fg-info:                 var(--primitive-blue-900);
+  --text-fg-disabled:             var(--primitive-gray-400);
+  --text-fg-purple:               var(--primitive-purple-600);
+  --text-fg-cyan:                 var(--primitive-cyan-600);
+  --text-fg-indigo:               var(--primitive-indigo-600);
+  --text-fg-infos:                var(--primitive-blue-700);
+  --text-fg-infos-strong:         var(--primitive-blue-900);
+
+  /* Borda */
+  --border-dark:                  var(--primitive-gray-800);
+  --border-buffer:                var(--primitive-white);
+  --border-muted:                 var(--primitive-gray-050);
+  --border-light-subtle:          var(--primitive-gray-100);
+  --border-light:                 var(--primitive-gray-100);
+  --border-light-medium:          var(--primitive-gray-100);
+  --border-default-subtle:        var(--primitive-gray-200);
+  --border-default:               var(--primitive-gray-200);
+  --border-default-medium:        var(--primitive-gray-200);
+  --border-default-strong:        var(--primitive-gray-200);
+  --border-success-subtle:        var(--primitive-emerald-200);
+  --border-success:               var(--primitive-emerald-700);
+  --border-danger-subtle:         var(--primitive-rose-200);
+  --border-danger:                var(--primitive-rose-700);
+  --border-warning-subtle:        var(--primitive-orange-200);
+  --border-warning:               var(--primitive-orange-600);
+  --border-brand-subtle:          var(--primitive-brand-200);
+  --border-brand-light:           var(--primitive-brand-400);
+  --border-brand:                 var(--primitive-brand-500);
+  --border-purple:                var(--primitive-purple-500);
+  --border-orange:                var(--primitive-orange-400);
+  --border-blue-subtle:           var(--primitive-blue-200);
+  --border-blue-light:            var(--primitive-blue-600);
+  --border-blue:                  var(--primitive-blue-700);
+
+  /* Tipografia */
+  --font-family-base:             var(--primitive-font-family-base);
+}
+
+/* ── Dark mode ── */
+/* (preencher quando exportar tokens dark do Figma) */
+.dark {
+  /* Background */
+  /* --bg-brand: var(--primitive-brand-300); */
+
+  /* Texto */
+  /* --text-heading: var(--primitive-gray-050); */
+
+  /* Borda */
+  /* --border-default: var(--primitive-gray-700); */
+}
