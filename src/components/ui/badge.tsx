@@ -106,14 +106,14 @@ const secondaryTextColor: Record<string, string> = {
 
 // ── Cores do Spinner por tema — extraídas do Figma ────────────────────────
 // track = trilha | arc = arco girando
-const spinnerColors: Record<string, { track: string; arc: string }> = {
-  gray:    { track: "text-bg-neutral-quaternary", arc: "text-bg-neutral-quaternary" },
-  white:   { track: "text-bg-neutral-quaternary", arc: "text-bg-neutral-quaternary" },
-  brand:   { track: "text-bg-brand-soft",         arc: "text-bg-brand"             },
-  danger:  { track: "text-bg-danger-medium",       arc: "text-bg-danger"            },
-  warning: { track: "text-bg-warning-medium",      arc: "text-bg-warning"           },
-  success: { track: "text-bg-success-medium",      arc: "text-bg-success"           },
-  info:    { track: "text-bg-info-medium",          arc: "text-bg-info"              },
+const spinnerColors: Record<string, { showTrack: boolean; track: string; arc: string }> = {
+  gray:    { showTrack: true, track: "text-bg-neutral-quaternary", arc: "text-bg-brand"    },
+  white:   { showTrack: true, track: "text-bg-neutral-quaternary", arc: "text-bg-brand"    },
+  brand:   { showTrack: true, track: "text-bg-brand-soft",         arc: "text-bg-brand"    },
+  danger:  { showTrack: true, track: "text-bg-danger-medium",      arc: "text-bg-danger"   },
+  warning: { showTrack: true, track: "text-bg-warning-medium",     arc: "text-bg-warning"  },
+  success: { showTrack: true, track: "text-bg-success-medium",     arc: "text-bg-success"  },
+  info:    { showTrack: true, track: "text-bg-info-medium",        arc: "text-bg-info"     },
 }
 
 
@@ -230,7 +230,7 @@ function Badge({
       {variant === "loader" && (
         spinner ?? <Spinner
           size={size === "lg" ? "small" : "xs"}
-          track={false}
+          track={spinnerColors[theme ?? "gray"].showTrack}
           arcColor={spinnerColors[theme ?? "gray"].arc}
           trackColor={spinnerColors[theme ?? "gray"].track}
         />
