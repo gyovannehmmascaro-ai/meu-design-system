@@ -37,7 +37,7 @@ const buttonVariants = cva(
         info:
           "bg-bg-info text-text-white hover:bg-bg-info-strong disabled:bg-bg-disabled disabled:text-text-fg-disabled focus-visible:ring-bg-info/40",
 
-        /* ── Variantessss do shadcn (mantidas para compatibilidade) ── */
+        /* ── Variantes do shadcn (mantidas para compatibilidade) ── */
         default:
           "bg-primary text-primary-foreground hover:bg-primary/90",
         destructive:

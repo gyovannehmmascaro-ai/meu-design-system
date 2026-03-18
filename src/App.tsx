@@ -1,3 +1,4 @@
+import { StyleguideLayout } from "@/styleguide/Layout"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Spinner } from "@/components/ui/spinner"
@@ -121,6 +122,10 @@ function Table({
 
 // ── App ────────────────────────────────────────────────────────────────────
 export default function App() {
+  if (window.location.pathname === "/styleguide") {
+    return <StyleguideLayout />
+  }
+
   return (
     <div className="min-h-screen bg-bg-neutral-primary-soft p-10 font-sans">
       <div className="max-w-5xl mx-auto space-y-12">
