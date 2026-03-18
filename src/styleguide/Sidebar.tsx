@@ -30,7 +30,7 @@ const nav: { group: string; items: { id: Page; label: string }[] }[] = [
 
 export function Sidebar({ activePage, setActivePage }: SidebarProps) {
   return (
-    <aside className="w-56 shrink-0 border-r border-border-default bg-bg-neutral-primary-soft min-h-screen p-4">
+    <aside className="w-56 shrink-0 border-r border-border-default bg-bg-neutral-primary-soft h-full overflow-y-auto p-4">
       <div className="mb-6 px-2">
         <span className="text-sm font-bold text-text-heading">Design System</span>
       </div>

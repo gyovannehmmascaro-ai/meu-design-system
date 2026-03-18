@@ -24,7 +24,7 @@ export function StyleguideLayout() {
   const [activePage, setActivePage] = useState<Page>("colors")
 
   return (
-    <div className="flex min-h-screen font-sans bg-white">
+    <div className="flex h-screen overflow-hidden font-sans bg-white">
       <Sidebar activePage={activePage} setActivePage={setActivePage} />
       <div className="flex-1 flex flex-col">
         <header className="h-12 border-b border-border-default flex items-center px-8 bg-white shrink-0">
