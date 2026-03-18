@@ -2,6 +2,7 @@ import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { Spinner } from "@/components/ui/spinner"
+import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 
 // ── Variantes base (badges com texto) ─────────────────────────────────────
 const badgeVariants = cva(
@@ -115,19 +116,6 @@ const spinnerColors: Record<string, { track: string; arc: string }> = {
   info:    { track: "text-bg-info-medium",          arc: "text-bg-info"              },
 }
 
-// ── Avatar CSS (placeholder até ter o componente Avatar) ───────────────────
-function AvatarPlaceholder({ size }: { size?: "sm" | "lg" | null }) {
-  return (
-    <span className={cn(
-      "rounded-full bg-bg-neutral-tertiary flex items-center justify-center shrink-0 overflow-hidden",
-      size === "lg" ? "size-5" : "size-4"
-    )}>
-      <svg viewBox="0 0 16 16" fill="currentColor" className="size-3 text-text-fg-disabled">
-        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5 6a5 5 0 0 1 10 0H3Z" />
-      </svg>
-    </span>
-  )
-}
 
 // ── Tipos ──────────────────────────────────────────────────────────────────
 export interface BadgeProps
@@ -235,7 +223,7 @@ function Badge({
       {variant === "avatar" && (
         avatar
           ? <span className={cn("rounded-full overflow-hidden shrink-0", size === "lg" ? "size-5" : "size-4")}>{avatar}</span>
-          : <AvatarPlaceholder size={size} />
+          : <Avatar className={size === "lg" ? "size-5" : "size-4"}><AvatarFallback /></Avatar>
       )}
 
       {/* Loader — Spinner real com cores do tema */}
