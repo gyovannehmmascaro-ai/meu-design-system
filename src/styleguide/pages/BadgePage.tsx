@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Badge } from "@/components/ui/badge"
 import { Clock, X } from "lucide-react"
+import { ComponentPreview } from "../components/ComponentPreview"
 
 // ── Dados ──────────────────────────────────────────────────────────────────
 const badgeThemes = [
@@ -34,7 +35,7 @@ function Table({
 }) {
   const gridCols = `${labelWidth} repeat(${cols.length}, ${colWidth})`
   return (
-    <div className="bg-white rounded-fig-base border border-border-default overflow-hidden">
+    <div className="w-full bg-white rounded-lg border border-border-default overflow-hidden">
       <div
         className="grid border-b border-border-default bg-bg-neutral-primary-soft"
         style={{ gridTemplateColumns: gridCols }}
@@ -67,21 +68,26 @@ function Table({
   )
 }
 
-function SectionTitle({ children }: { children: React.ReactNode }) {
-  return (
-    <h2 className="text-xs font-bold text-text-fg-disabled uppercase tracking-widest mb-3">
-      {children}
-    </h2>
-  )
-}
-
 // ── BadgePage ──────────────────────────────────────────────────────────────
 export function BadgePage() {
   return (
     <div className="space-y-8">
 
-      <section>
-        <SectionTitle>Default — Leading + Trailing icon</SectionTitle>
+      <div className="mb-2">
+        <h1 className="text-2xl font-bold text-text-heading">Badge</h1>
+        <p className="text-sm text-text-fg-secondary mt-1">
+          Use badges para exibir contagens, status ou rótulos curtos em qualquer lugar da interface.
+        </p>
+      </div>
+
+      <ComponentPreview
+        title="Default — Leading + Trailing icon"
+        description="Ícone à esquerda para contexto e à direita para ação como remover."
+        className="p-4 block"
+        code={`<Badge theme="brand" size="lg" iconLeading={<Clock />} iconTrailing={<X />}>
+  Badge
+</Badge>`}
+      >
         <Table
           cols={[...badgeSizes]}
           rows={[...badgeThemes]}
@@ -91,10 +97,16 @@ export function BadgePage() {
             </Badge>
           )}
         />
-      </section>
+      </ComponentPreview>
 
-      <section>
-        <SectionTitle>Default — Leading icon</SectionTitle>
+      <ComponentPreview
+        title="Default — Leading icon"
+        description="Ícone à esquerda para reforçar o significado do rótulo."
+        className="p-4 block"
+        code={`<Badge theme="brand" size="lg" iconLeading={<Clock />}>
+  Badge
+</Badge>`}
+      >
         <Table
           cols={[...badgeSizes]}
           rows={[...badgeThemes]}
@@ -104,10 +116,16 @@ export function BadgePage() {
             </Badge>
           )}
         />
-      </section>
+      </ComponentPreview>
 
-      <section>
-        <SectionTitle>Default — Trailing icon</SectionTitle>
+      <ComponentPreview
+        title="Default — Trailing icon"
+        description="Ícone à direita, geralmente usado para ação de remoção."
+        className="p-4 block"
+        code={`<Badge theme="brand" size="lg" iconTrailing={<X />}>
+  Badge
+</Badge>`}
+      >
         <Table
           cols={[...badgeSizes]}
           rows={[...badgeThemes]}
@@ -117,10 +135,14 @@ export function BadgePage() {
             </Badge>
           )}
         />
-      </section>
+      </ComponentPreview>
 
-      <section>
-        <SectionTitle>Default — Só texto</SectionTitle>
+      <ComponentPreview
+        title="Default — Só texto"
+        description="Badge simples apenas com rótulo de texto."
+        className="p-4 block"
+        code={`<Badge theme="brand" size="lg">Badge</Badge>`}
+      >
         <Table
           cols={[...badgeSizes]}
           rows={[...badgeThemes]}
@@ -128,10 +150,14 @@ export function BadgePage() {
             <Badge theme={t as any} size={s as any}>Badge</Badge>
           )}
         />
-      </section>
+      </ComponentPreview>
 
-      <section>
-        <SectionTitle>With Dot</SectionTitle>
+      <ComponentPreview
+        title="With Dot"
+        description="Indicador visual de status usando um ponto colorido."
+        className="p-4 block"
+        code={`<Badge theme="brand" size="lg" variant="dot">Badge</Badge>`}
+      >
         <Table
           cols={[...badgeSizes]}
           rows={[...badgeThemes]}
@@ -139,10 +165,14 @@ export function BadgePage() {
             <Badge theme={t as any} size={s as any} variant="dot">Badge</Badge>
           )}
         />
-      </section>
+      </ComponentPreview>
 
-      <section>
-        <SectionTitle>With Dot + Trailing icon</SectionTitle>
+      <ComponentPreview
+        title="With Dot + Trailing icon"
+        description="Combinação de ponto de status com ícone de remoção."
+        className="p-4 block"
+        code={`<Badge theme="brand" size="lg" variant="dot" iconTrailing={<X />}>Badge</Badge>`}
+      >
         <Table
           cols={[...badgeSizes]}
           rows={[...badgeThemes]}
@@ -150,10 +180,18 @@ export function BadgePage() {
             <Badge theme={t as any} size={s as any} variant="dot" iconTrailing={<X />}>Badge</Badge>
           )}
         />
-      </section>
+      </ComponentPreview>
 
-      <section>
-        <SectionTitle>With Avatar</SectionTitle>
+      <ComponentPreview
+        title="With Avatar"
+        description="Badge com avatar de usuário, ideal para tags de pessoas."
+        className="p-4 block"
+        code={`<Badge theme="brand" size="lg" variant="avatar" iconTrailing={<X />}
+  avatar={<img src="..." className="w-full h-full object-cover" alt="" />}
+>
+  Badge
+</Badge>`}
+      >
         <Table
           cols={[...badgeSizes]}
           rows={[...badgeThemes]}
@@ -169,10 +207,14 @@ export function BadgePage() {
             </Badge>
           )}
         />
-      </section>
+      </ComponentPreview>
 
-      <section>
-        <SectionTitle>With Loader</SectionTitle>
+      <ComponentPreview
+        title="With Loader"
+        description="Indica estado de carregamento dentro da badge."
+        className="p-4 block"
+        code={`<Badge theme="brand" size="lg" variant="loader">Badge</Badge>`}
+      >
         <Table
           cols={[...badgeSizes]}
           rows={[...badgeThemes]}
@@ -180,10 +222,18 @@ export function BadgePage() {
             <Badge theme={t as any} size={s as any} variant="loader">Badge</Badge>
           )}
         />
-      </section>
+      </ComponentPreview>
 
-      <section>
-        <SectionTitle>With Secondary Text</SectionTitle>
+      <ComponentPreview
+        title="With Secondary Text"
+        description="Dois níveis de texto para contexto adicional."
+        className="p-4 block"
+        code={`<Badge theme="brand" size="lg" variant="secondary-text"
+  iconLeading={<Clock />} iconTrailing={<X />} secondaryText="Secondary"
+>
+  Badge
+</Badge>`}
+      >
         <Table
           cols={[...badgeSizes]}
           rows={[...badgeThemes]}
@@ -201,10 +251,14 @@ export function BadgePage() {
             </Badge>
           )}
         />
-      </section>
+      </ComponentPreview>
 
-      <section>
-        <SectionTitle>Icon Only — redondo</SectionTitle>
+      <ComponentPreview
+        title="Icon Only"
+        description="Badge circular com apenas um ícone, sem texto."
+        className="p-4 block"
+        code={`<Badge theme="brand" size="lg" variant="icon-only" icon={<Clock />} />`}
+      >
         <Table
           cols={[...badgeSizes]}
           rows={[...badgeThemes]}
@@ -212,10 +266,14 @@ export function BadgePage() {
             <Badge theme={t as any} size={s as any} variant="icon-only" icon={<Clock />} />
           )}
         />
-      </section>
+      </ComponentPreview>
 
-      <section>
-        <SectionTitle>Number — redondo</SectionTitle>
+      <ComponentPreview
+        title="Number"
+        description="Badge circular com contagem numérica."
+        className="p-4 block"
+        code={`<Badge theme="brand" size="lg" variant="number" number={1} />`}
+      >
         <Table
           cols={[...badgeSizes]}
           rows={[...badgeThemes]}
@@ -223,10 +281,14 @@ export function BadgePage() {
             <Badge theme={t as any} size={s as any} variant="number" number={1} />
           )}
         />
-      </section>
+      </ComponentPreview>
 
-      <section>
-        <SectionTitle>Rounded — pílula</SectionTitle>
+      <ComponentPreview
+        title="Rounded — pílula"
+        description="Formato pílula para destacar novidades ou versões."
+        className="p-4 block"
+        code={`<Badge theme="brand" variant="rounded">New</Badge>`}
+      >
         <Table
           cols={[{ key: "sm", label: "sm" }]}
           rows={[...badgeThemes]}
@@ -234,7 +296,7 @@ export function BadgePage() {
             <Badge theme={t as any} variant="rounded">New</Badge>
           )}
         />
-      </section>
+      </ComponentPreview>
 
     </div>
   )

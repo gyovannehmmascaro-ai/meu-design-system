@@ -4,7 +4,7 @@ import { ComponentPreview } from "../components/ComponentPreview"
 export function SpinnerPage() {
   return (
     <div className="space-y-6">
-      <ComponentPreview name="Spinner — With track">
+      <ComponentPreview title="Spinner — With track">
         <Spinner size="xs"     track />
         <Spinner size="small"  track />
         <Spinner size="medium" track />
@@ -12,7 +12,7 @@ export function SpinnerPage() {
         <Spinner size="large"  track />
       </ComponentPreview>
 
-      <ComponentPreview name="Spinner — Without track">
+      <ComponentPreview title="Spinner — Without track">
         <Spinner size="xs"     track={false} />
         <Spinner size="small"  track={false} />
         <Spinner size="medium" track={false} />

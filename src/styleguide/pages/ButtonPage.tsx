@@ -5,7 +5,7 @@ import { ComponentPreview } from "../components/ComponentPreview"
 export function ButtonPage() {
   return (
     <div className="space-y-6">
-      <ComponentPreview name="Button — Variantes sólidas">
+      <ComponentPreview title="Button — Variantes sólidas">
         <Button variant="brand">Brand</Button>
         <Button variant="secondary">Secondary</Button>
         <Button variant="tertiary">Tertiary</Button>
@@ -17,14 +17,14 @@ export function ButtonPage() {
         <Button variant="ghost">Ghost</Button>
       </ComponentPreview>
 
-      <ComponentPreview name="Button — Variantes outline">
+      <ComponentPreview title="Button — Variantes outline">
         <Button variant="success" outline>Success</Button>
         <Button variant="danger"  outline>Danger</Button>
         <Button variant="warning" outline>Warning</Button>
         <Button variant="info"    outline>Info</Button>
       </ComponentPreview>
 
-      <ComponentPreview name="Button — Tamanhos">
+      <ComponentPreview title="Button — Tamanhos">
         <Button size="xs">xs</Button>
         <Button size="sm">sm</Button>
         <Button size="default">base</Button>
@@ -32,7 +32,7 @@ export function ButtonPage() {
         <Button size="xl">xl</Button>
       </ComponentPreview>
 
-      <ComponentPreview name="Button — Com ícones">
+      <ComponentPreview title="Button — Com ícones">
         <Button><ArrowLeft />Leading</Button>
         <Button>Trailing<ArrowRight /></Button>
         <Button size="icon"><ArrowRight /></Button>
@@ -40,7 +40,7 @@ export function ButtonPage() {
         <Button size="icon-xs"><ArrowRight /></Button>
       </ComponentPreview>
 
-      <ComponentPreview name="Button — Estado disabled">
+      <ComponentPreview title="Button — Estado disabled">
         <Button variant="brand"   disabled>Brand</Button>
         <Button variant="success" disabled>Success</Button>
         <Button variant="danger"  disabled>Danger</Button>

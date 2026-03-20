@@ -29,7 +29,7 @@ export function AvatarPage() {
     <div className="space-y-6">
 
       {/* Tamanhos com foto */}
-      <ComponentPreview name="Avatar — Tamanhos">
+      <ComponentPreview title="Avatar — Tamanhos">
         {SIZES.map(size => (
           <Avatar key={size} size={size}>
             <AvatarImage src={PHOTOS[0].src} alt={`Avatar ${size}`} />
@@ -39,7 +39,7 @@ export function AvatarPage() {
       </ComponentPreview>
 
       {/* Fallback com iniciais */}
-      <ComponentPreview name="Avatar — Iniciais (fallback)">
+      <ComponentPreview title="Avatar — Iniciais (fallback)">
         {SIZES.map(size => (
           <Avatar key={size} size={size}>
             <AvatarFallback>JL</AvatarFallback>
@@ -48,7 +48,7 @@ export function AvatarPage() {
       </ComponentPreview>
 
       {/* Placeholder genérico sem iniciais */}
-      <ComponentPreview name="Avatar — Placeholder">
+      <ComponentPreview title="Avatar — Placeholder">
         {SIZES.map(size => (
           <Avatar key={size} size={size}>
             <AvatarFallback />
@@ -57,7 +57,7 @@ export function AvatarPage() {
       </ComponentPreview>
 
       {/* Status — todos os tamanhos, cada um com um status diferente */}
-      <ComponentPreview name="Avatar — Status">
+      <ComponentPreview title="Avatar — Status">
         {SIZES.map((size, i) => (
           <Avatar key={size} size={size}>
             <AvatarImage src={PHOTOS[i % PHOTOS.length].src} alt={STATUS_PER_SIZE[i]} />
@@ -68,7 +68,7 @@ export function AvatarPage() {
       </ComponentPreview>
 
       {/* Remove button — todos os tamanhos */}
-      <ComponentPreview name="Avatar — Com botão de remover">
+      <ComponentPreview title="Avatar — Com botão de remover">
         {SIZES.map((size, i) => (
           <Avatar key={size} size={size}>
             <AvatarImage src={PHOTOS[i % PHOTOS.length].src} alt={`Remove ${size}`} />
@@ -79,7 +79,7 @@ export function AvatarPage() {
       </ComponentPreview>
 
       {/* Avatar Group */}
-      <ComponentPreview name="Avatar Group">
+      <ComponentPreview title="Avatar Group">
         <div className="flex flex-col gap-6">
           {(["sm", "base", "lg"] as const).map(size => (
             <AvatarGroup key={size} size={size} max={4}>
@@ -95,10 +95,10 @@ export function AvatarPage() {
       </ComponentPreview>
 
       {/* Avatar Group Label — com helper */}
-      <ComponentPreview name="Avatar Group Label — Com helper">
+      <ComponentPreview title="Avatar Group Label — Com helper">
         <div className="flex flex-col gap-4">
           {(["sm", "base", "lg", "xl"] as const).map(size => (
-            <AvatarGroupLabel key={size} size={size} name="Jese Leos" helper="jese@flowbite.com">
+            <AvatarGroupLabel key={size} size={size} title="Jese Leos" helper="jese@flowbite.com">
               <AvatarImage src={PHOTOS[0].src} alt="Jese Leos" />
               <AvatarFallback>JL</AvatarFallback>
             </AvatarGroupLabel>
@@ -107,10 +107,10 @@ export function AvatarPage() {
       </ComponentPreview>
 
       {/* Avatar Group Label — só nome */}
-      <ComponentPreview name="Avatar Group Label — Só nome">
+      <ComponentPreview title="Avatar Group Label — Só nome">
         <div className="flex flex-col gap-4">
           {(["sm", "base", "lg", "xl"] as const).map(size => (
-            <AvatarGroupLabel key={size} size={size} name="Jese Leos">
+            <AvatarGroupLabel key={size} size={size} title="Jese Leos">
               <AvatarImage src={PHOTOS[0].src} alt="Jese Leos" />
               <AvatarFallback>JL</AvatarFallback>
             </AvatarGroupLabel>
