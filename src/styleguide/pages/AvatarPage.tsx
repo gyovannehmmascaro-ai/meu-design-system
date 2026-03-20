@@ -98,7 +98,7 @@ export function AvatarPage() {
       <ComponentPreview title="Avatar Group Label — Com helper">
         <div className="flex flex-col gap-4">
           {(["sm", "base", "lg", "xl"] as const).map(size => (
-            <AvatarGroupLabel key={size} size={size} title="Jese Leos" helper="jese@flowbite.com">
+            <AvatarGroupLabel key={size} size={size} name="Jese Leos" helper="jese@flowbite.com">
               <AvatarImage src={PHOTOS[0].src} alt="Jese Leos" />
               <AvatarFallback>JL</AvatarFallback>
             </AvatarGroupLabel>
@@ -110,7 +110,7 @@ export function AvatarPage() {
       <ComponentPreview title="Avatar Group Label — Só nome">
         <div className="flex flex-col gap-4">
           {(["sm", "base", "lg", "xl"] as const).map(size => (
-            <AvatarGroupLabel key={size} size={size} title="Jese Leos">
+            <AvatarGroupLabel key={size} size={size} name="Jese Leos">
               <AvatarImage src={PHOTOS[0].src} alt="Jese Leos" />
               <AvatarFallback>JL</AvatarFallback>
             </AvatarGroupLabel>
