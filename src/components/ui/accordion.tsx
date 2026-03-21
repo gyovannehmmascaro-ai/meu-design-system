@@ -110,9 +110,10 @@ function AccordionItem({ id, title, icon, children, className }: AccordionItemPr
       ? cn("px-6 py-5 bg-bg-neutral-secondary-medium text-text-heading border-b border-border-default", hoverClasses)
       : cn("px-6 py-5 bg-bg-neutral-primary-soft text-text-body", hoverClasses),
 
+    // Flush: sem hover visual — Figma não define mudança de estado no hover
     flush: isOpen
-      ? cn("py-5 text-text-heading border-b border-border-default", hoverClasses)
-      : cn("py-5 text-text-body border-b border-border-default", hoverClasses),
+      ? "py-5 text-text-heading border-b border-border-default"
+      : "py-5 text-text-body border-b border-border-default",
   }[type]
 
   // ── Estilos do body ────────────────────────────────────────────────────
