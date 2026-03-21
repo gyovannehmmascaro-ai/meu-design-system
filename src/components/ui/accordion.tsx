@@ -1,5 +1,6 @@
 import * as React from "react"
-import { ChevronDown, CircleHelp } from "lucide-react"
+import { CircleHelp } from "lucide-react"
+import { CaretDownIcon } from "@phosphor-icons/react"
 import { cn } from "@/lib/utils"
 
 // ── Types ──────────────────────────────────────────────────────────────────
@@ -140,7 +141,8 @@ function AccordionItem({ id, title, icon, children, className }: AccordionItemPr
             </span>
             <span className="font-medium text-base leading-6">{title}</span>
           </span>
-          <ChevronDown
+          <CaretDownIcon
+            weight="bold"
             className={cn(
               "size-5 shrink-0 transition-transform duration-200 text-current",
               isOpen && "rotate-180"
