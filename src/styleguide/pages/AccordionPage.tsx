@@ -1,4 +1,5 @@
 import { Accordion, AccordionItem } from "@/components/ui/accordion"
+import { Bell } from "@phosphor-icons/react"
 import { ComponentPreview } from "../components/ComponentPreview"
 
 const ITEMS = [
@@ -76,6 +77,54 @@ export function AccordionPage() {
           <Accordion type="default" colorScheme="brand">
             {ITEMS.map(item => (
               <AccordionItem key={item.id} id={item.id} title={item.title}>
+                <p>{item.content}</p>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </ComponentPreview>
+
+      <ComponentPreview title="Sem leading icon">
+        <div className="w-full">
+          <Accordion type="default">
+            {ITEMS.map(item => (
+              <AccordionItem key={item.id} id={item.id} title={item.title} leadingIcon={false}>
+                <p>{item.content}</p>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </ComponentPreview>
+
+      <ComponentPreview title="Sem trailing icon (caret)">
+        <div className="w-full">
+          <Accordion type="default">
+            {ITEMS.map(item => (
+              <AccordionItem key={item.id} id={item.id} title={item.title} trailingIcon={false}>
+                <p>{item.content}</p>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </ComponentPreview>
+
+      <ComponentPreview title="Trailing icon sem rotação">
+        <div className="w-full">
+          <Accordion type="default" defaultOpen="q1">
+            {ITEMS.map(item => (
+              <AccordionItem key={item.id} id={item.id} title={item.title} trailingIconRotates={false}>
+                <p>{item.content}</p>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </ComponentPreview>
+
+      <ComponentPreview title="Leading icon customizado">
+        <div className="w-full">
+          <Accordion type="default">
+            {ITEMS.map(item => (
+              <AccordionItem key={item.id} id={item.id} title={item.title} leadingIcon={<Bell weight="bold" />}>
                 <p>{item.content}</p>
               </AccordionItem>
             ))}

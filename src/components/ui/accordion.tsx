@@ -1,6 +1,5 @@
 import * as React from "react"
-import { CircleHelp } from "lucide-react"
-import { CaretDownIcon } from "@phosphor-icons/react"
+import { CaretDownIcon, Question } from "@phosphor-icons/react"
 import { cn } from "@/lib/utils"
 
 // ── Types ──────────────────────────────────────────────────────────────────
@@ -73,15 +72,19 @@ function Accordion({
 
 // ── AccordionItem ──────────────────────────────────────────────────────────
 type AccordionItemProps = {
-  id:        string
-  title:     string
-  /** ícone antes do título — padrão: CircleHelp (substituir quando trocarmos icon lib) */
-  icon?:     React.ReactNode
-  children:  React.ReactNode
-  className?: string
+  id:                   string
+  title:                string
+  /** ícone à esquerda do título — padrão: Question (Phosphor). false = oculta */
+  leadingIcon?:         React.ReactNode | false
+  /** ícone à direita (caret) — padrão: CaretDown rotacionando. false = oculta */
+  trailingIcon?:        React.ReactNode | false
+  /** controla se o caret padrão rotaciona ao expandir — ignorado se trailingIcon customizado */
+  trailingIconRotates?: boolean
+  children:             React.ReactNode
+  className?:           string
 }
 
-function AccordionItem({ id, title, icon, children, className }: AccordionItemProps) {
+function AccordionItem({ id, title, leadingIcon, trailingIcon, trailingIconRotates = true, children, className }: AccordionItemProps) {
   const { type, colorScheme, openItems, toggle } = React.useContext(AccordionContext)
   const isOpen = openItems.includes(id)
 
@@ -136,18 +139,24 @@ function AccordionItem({ id, title, icon, children, className }: AccordionItemPr
           className={cn(buttonBase, buttonClasses)}
         >
           <span className="flex items-center gap-2 flex-1 min-w-0 text-left">
-            <span className="shrink-0 size-5 [&_svg]:size-5 text-current">
-              {icon ?? <CircleHelp />}
-            </span>
+            {leadingIcon !== false && (
+              <span className="shrink-0 size-5 [&_svg]:size-5 text-current">
+                {leadingIcon ?? <Question weight="bold" />}
+              </span>
+            )}
             <span className="font-medium text-base leading-6">{title}</span>
           </span>
-          <CaretDownIcon
-            weight="bold"
-            className={cn(
-              "size-5 shrink-0 transition-transform duration-200 text-current",
-              isOpen && "rotate-180"
-            )}
-          />
+          {trailingIcon !== false && (
+            trailingIcon ?? (
+              <CaretDownIcon
+                weight="bold"
+                className={cn(
+                  "size-5 shrink-0 transition-transform duration-200 text-current",
+                  trailingIconRotates && isOpen && "rotate-180"
+                )}
+              />
+            )
+          )}
         </button>
       </h2>
 
