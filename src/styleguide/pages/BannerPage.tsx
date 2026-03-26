@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { BookOpen, ArrowRight } from "lucide-react"
+import { BookIcon, ArrowRightIcon } from "@phosphor-icons/react"
 import { Banner } from "@/components/ui/banner"
 import { ComponentPreview } from "../components/ComponentPreview"
 
@@ -46,8 +46,8 @@ export function BannerPage() {
   type="heading-description"
   heading="Integration is the key"
   description="You can integrate Flowbite with many tools to make your work even more efficient."
-  secondaryAction={{ label: "Learn more", icon: <BookOpen /> }}
-  primaryAction={{ label: "Get started", icon: <ArrowRight /> }}
+  secondaryAction={{ label: "Learn more", icon: <BookIcon weight="bold" /> }}
+  primaryAction={{ label: "Get started", icon: <ArrowRightIcon weight="bold" /> }}
   onClose={() => {}}
 />`}
       >
@@ -57,8 +57,8 @@ export function BannerPage() {
               type="heading-description"
               heading="Integration is the key"
               description="You can integrate Flowbite with many tools to make your work even more efficient."
-              secondaryAction={{ label: "Learn more", icon: <BookOpen className="size-3.5" /> }}
-              primaryAction={{ label: "Get started", icon: <ArrowRight className="size-3.5" /> }}
+              secondaryAction={{ label: "Learn more", icon: <BookIcon weight="bold" className="size-3.5" /> }}
+              primaryAction={{ label: "Get started", icon: <ArrowRightIcon weight="bold" className="size-3.5" /> }}
               onClose={onClose}
             />
           )}

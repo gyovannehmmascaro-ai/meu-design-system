@@ -1,5 +1,5 @@
 import * as React from "react"
-import { X, Megaphone, Percent, ArrowRight, Mail } from "lucide-react"
+import { XIcon, MegaphoneIcon, PercentIcon, ArrowRightIcon, EnvelopeIcon } from "@phosphor-icons/react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Logo, type LogoProps } from "@/components/ui/logo"
@@ -46,17 +46,12 @@ export interface BannerProps {
   onSubscribe?: (email: string) => void
 }
 
-// ── Botão de fechar ────────────────────────────────────────────────────────
+// ── Botão de fechar — usa Button ghost da biblioteca (Figma: ghost, icon-xs, Phosphor X bold 14px) ──
 function CloseButton({ onClick }: { onClick?: () => void }) {
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      aria-label="Fechar banner"
-      className="size-8 flex items-center justify-center rounded-fig text-text-fg-disabled hover:bg-bg-neutral-tertiary hover:text-text-heading transition-colors shrink-0"
-    >
-      <X className="size-4" />
-    </button>
+    <Button variant="ghost" size="icon-xs" onClick={onClick} aria-label="Fechar banner" className="shrink-0">
+      <XIcon weight="bold" className="size-3.5" />
+    </Button>
   )
 }
 
@@ -100,7 +95,7 @@ export function Banner({
         <div className="flex items-center gap-3 px-4 py-4 relative">
           <div className="flex flex-1 items-center @sm:justify-center gap-2.5 pr-8 @sm:pr-0">
             <span className="size-6 rounded-full bg-bg-neutral-tertiary flex items-center justify-center shrink-0">
-              {icon ?? <Megaphone className="size-4 text-text-body" />}
+              {icon ?? <MegaphoneIcon className="size-4 text-text-body" />}
             </span>
             <span className="text-sm text-text-body">
               {text ?? "New brand identity has been launched."}
@@ -159,7 +154,7 @@ export function Banner({
           <div className="flex flex-1 flex-col @sm:flex-row @sm:items-center @sm:justify-center gap-1.5 pr-8 @sm:pr-0">
             <div className="flex items-center gap-1.5">
               <span className="size-4 rounded-fig-base bg-bg-brand-softer flex items-center justify-center shrink-0">
-                {linkIcon ?? <Percent className="size-2.5 text-text-fg-brand" />}
+                {linkIcon ?? <PercentIcon className="size-2.5 text-text-fg-brand" />}
               </span>
               <span className="text-sm text-text-body">{text ?? "Get 2% pricing commission."}</span>
             </div>
@@ -169,7 +164,7 @@ export function Banner({
                 className="flex items-center gap-1.5 text-sm font-medium text-text-fg-brand underline decoration-solid hover:opacity-80 transition-opacity"
               >
                 {linkLabel}
-                <ArrowRight className="size-4" />
+                <ArrowRightIcon className="size-4" />
               </a>
             )}
           </div>
@@ -217,7 +212,7 @@ export function Banner({
               onClick={onClose}
               className="flex-1 @sm:hidden justify-center"
             >
-              <X className="size-3.5" />
+              <XIcon weight="bold" className="size-3.5" />
               Close
             </Button>
             <div className="hidden @sm:block">
@@ -234,10 +229,11 @@ export function Banner({
     <div className={cn("@container w-full bg-bg-neutral-primary-soft border-b border-border-default", className)}>
       <div className="flex items-center justify-center px-4 py-4 relative">
         <div className="flex flex-col @sm:flex-row items-stretch @sm:items-center gap-3 @sm:gap-4 w-full @sm:w-auto pr-8 @sm:pr-0">
-          <p className="text-sm font-medium text-text-body @sm:hidden">Sign up to our newsletter</p>
+          {/* Figma: text-heading (título), não text-body */}
+          <p className="text-sm font-medium text-text-heading @sm:hidden">Sign up to our newsletter</p>
           {/* Input placeholder — substituir pelo componente Input quando disponível */}
           <div className="flex items-center gap-2 bg-bg-neutral-secondary-medium border border-border-default-medium rounded-fig-base px-2.5 py-2 w-full @sm:w-[280px]">
-            <Mail className="size-4 text-text-fg-disabled shrink-0" />
+            <EnvelopeIcon className="size-4 text-text-fg-disabled shrink-0" />
             <input
               type="email"
               value={email}
