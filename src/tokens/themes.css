@@ -194,6 +194,13 @@
   --font-weight-extrabold:             var(--primitive-font-weight-extrabold);
   --font-weight-black:                 var(--primitive-font-weight-black);
 
+  /* ── Border Width — uso: border-0, border, border-2, border-4, border-8 ── */
+  --border-width-0:                    var(--primitive-border-0);
+  --border-width-1:                    var(--primitive-border-1);
+  --border-width-2:                    var(--primitive-border-2);
+  --border-width-4:                    var(--primitive-border-4);
+  --border-width-8:                    var(--primitive-border-8);
+
   /* ── Border Radius — uso: rounded-fig-0, rounded-fig-base... ── */
   --radius-fig-0:                      var(--primitive-radius-0);
   --radius-fig-xxs:                    var(--primitive-radius-xxs);

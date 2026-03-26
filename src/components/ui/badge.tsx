@@ -58,13 +58,13 @@ const roundedBadgeVariants = cva(
   {
     variants: {
       theme: {
-        gray:    "bg-bg-neutral-secondary    text-text-heading",
+        gray:    "bg-bg-neutral-quaternary   text-text-heading",
         white:   "bg-bg-neutral-primary-soft text-text-heading",
-        brand:   "bg-bg-brand-softer         text-text-fg-brand",
+        brand:   "bg-bg-brand-soft           text-text-fg-brand",
         danger:  "bg-bg-danger-medium        text-text-fg-danger-strong",
-        warning: "bg-bg-warning-soft         text-text-fg-warning",
-        success: "bg-bg-success-soft         text-text-fg-success-strong",
-        info:    "bg-bg-info-softer          text-text-fg-infos-strong",
+        warning: "bg-bg-warning-medium       text-text-fg-warning",
+        success: "bg-bg-success-medium       text-text-fg-success-strong",
+        info:    "bg-bg-info-medium          text-text-fg-infos-strong",
       },
     },
     defaultVariants: { theme: "gray" },

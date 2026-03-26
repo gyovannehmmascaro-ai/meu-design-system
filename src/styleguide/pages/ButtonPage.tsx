@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, ArrowRight } from "lucide-react"
+import { ArrowLeftIcon, ArrowRightIcon } from "@phosphor-icons/react"
 import { ComponentPreview } from "../components/ComponentPreview"
 
 export function ButtonPage() {
@@ -33,11 +33,25 @@ export function ButtonPage() {
       </ComponentPreview>
 
       <ComponentPreview title="Button — Com ícones">
-        <Button><ArrowLeft />Leading</Button>
-        <Button>Trailing<ArrowRight /></Button>
-        <Button size="icon"><ArrowRight /></Button>
-        <Button size="icon-sm"><ArrowRight /></Button>
-        <Button size="icon-xs"><ArrowRight /></Button>
+        <Button><ArrowLeftIcon weight="bold" />Leading</Button>
+        <Button>Trailing<ArrowRightIcon weight="bold" /></Button>
+        <Button size="icon"><ArrowRightIcon weight="bold" /></Button>
+        <Button size="icon-sm"><ArrowRightIcon weight="bold" /></Button>
+        <Button size="icon-xs"><ArrowRightIcon weight="bold" /></Button>
+      </ComponentPreview>
+
+      <ComponentPreview title="Button — Logo inside (variantes)">
+        <Button variant="secondary" size="icon"><img src="/logo-icon.svg" className="size-7" /></Button>
+        <Button variant="tertiary"  size="icon"><img src="/logo-icon.svg" className="size-7" /></Button>
+        <Button variant="ghost"     size="icon"><img src="/logo-icon.svg" className="size-7" /></Button>
+      </ComponentPreview>
+
+      <ComponentPreview title="Button — Logo inside (tamanhos)">
+        <Button variant="secondary" size="icon-xs"><img src="/logo-icon.svg" className="size-5" /></Button>
+        <Button variant="secondary" size="icon-sm"><img src="/logo-icon.svg" className="size-6" /></Button>
+        <Button variant="secondary" size="icon">   <img src="/logo-icon.svg" className="size-7" /></Button>
+        <Button variant="secondary" size="icon-lg"><img src="/logo-icon.svg" className="size-7" /></Button>
+        <Button variant="secondary" size="icon-xl"><img src="/logo-icon.svg" className="size-8" /></Button>
       </ComponentPreview>
 
       <ComponentPreview title="Button — Estado disabled">

@@ -10,8 +10,9 @@ import { AvatarPage } from "./pages/AvatarPage"
 import { AccordionPage } from "./pages/AccordionPage"
 import { LogoPage } from "./pages/LogoPage"
 import { BannerPage } from "./pages/BannerPage"
+import { AlertPage } from "./pages/AlertPage"
 
-type Page = "colors" | "typography" | "logo" | "button" | "badge" | "spinner" | "avatar" | "accordion" | "banner" | "shadcn-components"
+type Page = "colors" | "typography" | "logo" | "button" | "badge" | "spinner" | "avatar" | "accordion" | "banner" | "alert" | "shadcn-components"
 
 const pageTitles: Record<Page, string> = {
   "colors":             "Colors",
@@ -23,6 +24,7 @@ const pageTitles: Record<Page, string> = {
   "avatar":             "Avatar",
   "accordion":          "Accordion",
   "banner":             "Banner",
+  "alert":              "Alert",
   "shadcn-components":  "Shadcn Components",
 }
 
@@ -46,6 +48,7 @@ export function StyleguideLayout() {
           {activePage === "accordion"         && <AccordionPage />}
           {activePage === "logo"              && <LogoPage />}
           {activePage === "banner"            && <BannerPage />}
+          {activePage === "alert"             && <AlertPage />}
           {activePage === "shadcn-components" && <ShadcnComponents />}
         </main>
       </div>
