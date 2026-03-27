@@ -236,7 +236,7 @@ const groupConfig: Record<AvatarGroupSize, {
   border: string
   textSize: string
 }> = {
-  sm:   { avatarSize: "sm",   overlap: "-mr-2",   padding: "pr-2",   border: "border",   textSize: "text-xxs" },
+  sm:   { avatarSize: "sm",   overlap: "-mr-2",   padding: "pr-2",   border: "border-1", textSize: "text-xxs" },
   base: { avatarSize: "base", overlap: "-mr-3.5", padding: "pr-3.5", border: "border-2", textSize: "text-xs"  },
   lg:   { avatarSize: "lg",   overlap: "-mr-4",   padding: "pr-4",   border: "border-2", textSize: "text-sm"  },
 }

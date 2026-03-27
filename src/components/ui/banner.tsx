@@ -91,7 +91,7 @@ export function Banner({
   // ── Default ───────────────────────────────────────────────────────────────
   if (type === "default") {
     return (
-      <div className={cn("@container w-full bg-bg-neutral-primary-soft border-b border-border-default", className)}>
+      <div className={cn("@container w-full bg-bg-neutral-primary-soft border-b-1 border-border-default", className)}>
         <div className="flex items-center gap-3 px-4 py-4 relative">
           <div className="flex flex-1 items-center @sm:justify-center gap-2.5 pr-8 @sm:pr-0">
             <span className="size-6 rounded-full bg-bg-neutral-tertiary flex items-center justify-center shrink-0">
@@ -112,7 +112,7 @@ export function Banner({
   // ── Heading & Description ─────────────────────────────────────────────────
   if (type === "heading-description") {
     return (
-      <div className={cn("@container w-full bg-bg-neutral-primary-soft border-b border-border-default", className)}>
+      <div className={cn("@container w-full bg-bg-neutral-primary-soft border-b-1 border-border-default", className)}>
         <div className="flex items-start gap-4 px-4 py-4">
           {/* Conteúdo: texto + botões (empilhados em mobile/tablet, lado a lado em desktop) */}
           <div className="flex flex-1 flex-col @4xl:flex-row @4xl:items-center @4xl:justify-between gap-3 @4xl:gap-4 min-w-0">
@@ -149,7 +149,7 @@ export function Banner({
   // ── Icon & Link ───────────────────────────────────────────────────────────
   if (type === "icon-link") {
     return (
-      <div className={cn("@container w-full bg-bg-neutral-primary-soft border-t border-border-default", className)}>
+      <div className={cn("@container w-full bg-bg-neutral-primary-soft border-t-1 border-border-default", className)}>
         <div className="flex items-center gap-3 px-4 py-4 relative">
           <div className="flex flex-1 flex-col @sm:flex-row @sm:items-center @sm:justify-center gap-1.5 pr-8 @sm:pr-0">
             <div className="flex items-center gap-1.5">
@@ -179,7 +179,7 @@ export function Banner({
   // ── Logo + Button ─────────────────────────────────────────────────────────
   if (type === "logo-button") {
     return (
-      <div className={cn("@container w-full bg-bg-neutral-primary-soft border border-border-default rounded-fig-base shadow-[0px_1px_0.5px_0px_rgba(29,41,61,0.02)]", className)}>
+      <div className={cn("@container w-full bg-bg-neutral-primary-soft border-1 border-border-default rounded-fig-base shadow-[0px_1px_0.5px_0px_rgba(29,41,61,0.02)]", className)}>
         <div className="flex flex-col @sm:flex-row @sm:items-center @sm:justify-between gap-4 px-4 py-4">
           <div className="flex flex-1 items-center gap-4 min-w-0">
             {/* Mobile (<384px): ícone 48×48 */}
@@ -188,7 +188,7 @@ export function Banner({
             <Logo size="xs" iconOnly {...logoProps} className="hidden @sm:block @4xl:hidden" />
             {/* Desktop (>896px): logo completo */}
             <Logo size="xs" {...logoProps} className="hidden @4xl:block" />
-            <div className="border-l border-border-default pl-4 min-w-0">
+            <div className="border-l-1 border-border-default pl-4 min-w-0">
               <p className="text-base text-text-body leading-6 @sm:truncate">
                 {logoText ?? "Build websites even faster with components on top of Tailwind CSS."}
               </p>
@@ -226,13 +226,13 @@ export function Banner({
 
   // ── Newsletter ────────────────────────────────────────────────────────────
   return (
-    <div className={cn("@container w-full bg-bg-neutral-primary-soft border-b border-border-default", className)}>
+    <div className={cn("@container w-full bg-bg-neutral-primary-soft border-b-1 border-border-default", className)}>
       <div className="flex items-center justify-center px-4 py-4 relative">
         <div className="flex flex-col @sm:flex-row items-stretch @sm:items-center gap-3 @sm:gap-4 w-full @sm:w-auto pr-8 @sm:pr-0">
           {/* Figma: text-heading (título), não text-body */}
           <p className="text-sm font-medium text-text-heading @sm:hidden">Sign up to our newsletter</p>
           {/* Input placeholder — substituir pelo componente Input quando disponível */}
-          <div className="flex items-center gap-2 bg-bg-neutral-secondary-medium border border-border-default-medium rounded-fig-base px-2.5 py-2 w-full @sm:w-[280px]">
+          <div className="flex items-center gap-2 bg-bg-neutral-secondary-medium border-1 border-border-default-medium rounded-fig-base px-2.5 py-2 w-full @sm:w-[280px]">
             <EnvelopeIcon className="size-4 text-text-fg-disabled shrink-0" />
             <input
               type="email"

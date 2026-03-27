@@ -6,7 +6,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 
 // ── Variantes base (badges com texto) ─────────────────────────────────────
 const badgeVariants = cva(
-  "inline-flex items-center justify-center gap-1 border border-solid font-medium whitespace-nowrap rounded-fig-sm leading-4 [&_svg]:pointer-events-none [&_svg]:shrink-0 shrink-0",
+  "inline-flex items-center justify-center gap-1 border-1 border-solid font-medium whitespace-nowrap rounded-fig-sm leading-4 [&_svg]:pointer-events-none [&_svg]:shrink-0 shrink-0",
   {
     variants: {
       theme: {
@@ -29,7 +29,7 @@ const badgeVariants = cva(
 
 // ── Variante redonda (icon-only e number) ──────────────────────────────────
 const roundBadgeVariants = cva(
-  "inline-flex items-center justify-center rounded-full border border-solid font-medium shrink-0 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+  "inline-flex items-center justify-center rounded-full border-1 border-solid font-medium shrink-0 [&_svg]:pointer-events-none [&_svg]:shrink-0",
   {
     variants: {
       theme: {
@@ -249,7 +249,7 @@ function Badge({
         <>
           {/* Separador — linha vertical, igual ao Figma */}
           <span className={cn(
-            "shrink-0 border-l border-current opacity-30",
+            "shrink-0 border-l-1 border-current opacity-30",
             size === "lg" ? "h-3" : "h-2.5"
           )} />
           <span className={cn(

@@ -1,5 +1,5 @@
 import * as React from "react"
-import { CaretDownIcon, Question } from "@phosphor-icons/react"
+import { CaretDownIcon, QuestionIcon } from "@phosphor-icons/react"
 import { cn } from "@/lib/utils"
 
 // ── Types ──────────────────────────────────────────────────────────────────
@@ -56,7 +56,7 @@ function Accordion({
   }, [alwaysOpen])
 
   const containerClass = {
-    default: "border border-border-default rounded-fig-base shadow-[0px_1px_0.5px_0px_rgba(29,41,61,0.02)] overflow-hidden",
+    default: "border-1 border-border-default rounded-fig-base shadow-[0px_1px_0.5px_0px_rgba(29,41,61,0.02)] overflow-hidden",
     card:    "flex flex-col gap-4",
     flush:   "",
   }[type]
@@ -74,7 +74,7 @@ function Accordion({
 type AccordionItemProps = {
   id:                   string
   title:                string
-  /** ícone à esquerda do título — padrão: Question (Phosphor). false = oculta */
+  /** ícone à esquerda do título — padrão: QuestionIcon (Phosphor). false = oculta */
   leadingIcon?:         React.ReactNode | false
   /** ícone à direita (caret) — padrão: CaretDown rotacionando. false = oculta */
   trailingIcon?:        React.ReactNode | false
@@ -97,7 +97,7 @@ function AccordionItem({ id, title, leadingIcon, trailingIcon, trailingIconRotat
   // Card: borda no wrapper para evitar clipping nas quinas com overflow-hidden
   const itemWrapper = {
     default: "",
-    card:    "rounded-fig-base overflow-hidden shadow-[0px_1px_0.5px_0px_rgba(29,41,61,0.02)] border border-border-default",
+    card:    "rounded-fig-base overflow-hidden shadow-[0px_1px_0.5px_0px_rgba(29,41,61,0.02)] border-1 border-border-default",
     flush:   "",
   }[type]
 
@@ -106,25 +106,25 @@ function AccordionItem({ id, title, leadingIcon, trailingIcon, trailingIconRotat
 
   const buttonClasses = {
     default: isOpen
-      ? cn("px-6 py-5 bg-bg-neutral-secondary-medium text-text-heading border-b border-border-default", hoverClasses)
-      : cn("px-6 py-5 bg-bg-neutral-primary-soft text-text-body border-b border-border-default", hoverClasses),
+      ? cn("px-6 py-5 bg-bg-neutral-secondary-medium text-text-heading border-b-1 border-border-default", hoverClasses)
+      : cn("px-6 py-5 bg-bg-neutral-primary-soft text-text-body border-b-1 border-border-default", hoverClasses),
 
     // Card: sem borda no botão — wrapper já tem a borda externa
     card: isOpen
-      ? cn("px-6 py-5 bg-bg-neutral-secondary-medium text-text-heading border-b border-border-default", hoverClasses)
+      ? cn("px-6 py-5 bg-bg-neutral-secondary-medium text-text-heading border-b-1 border-border-default", hoverClasses)
       : cn("px-6 py-5 bg-bg-neutral-primary-soft text-text-body", hoverClasses),
 
     // Flush: sem hover visual — Figma não define mudança de estado no hover
     flush: isOpen
-      ? "py-5 text-text-heading border-b border-border-default"
-      : "py-5 text-text-body border-b border-border-default",
+      ? "py-5 text-text-heading border-b-1 border-border-default"
+      : "py-5 text-text-body border-b-1 border-border-default",
   }[type]
 
   // ── Estilos do body ────────────────────────────────────────────────────
   const bodyClasses = {
-    default: "px-6 py-5 bg-bg-neutral-primary-soft border-b border-border-default",
+    default: "px-6 py-5 bg-bg-neutral-primary-soft border-b-1 border-border-default",
     card:    "px-6 py-5 bg-bg-neutral-primary-soft",
-    flush:   "py-5 border-b border-border-default",
+    flush:   "py-5 border-b-1 border-border-default",
   }[type]
 
   return (
@@ -141,7 +141,7 @@ function AccordionItem({ id, title, leadingIcon, trailingIcon, trailingIconRotat
           <span className="flex items-center gap-2 flex-1 min-w-0 text-left">
             {leadingIcon !== false && (
               <span className="shrink-0 size-5 [&_svg]:size-5 text-current">
-                {leadingIcon ?? <Question weight="bold" />}
+                {leadingIcon ?? <QuestionIcon weight="bold" />}
               </span>
             )}
             <span className="font-medium text-base leading-6">{title}</span>

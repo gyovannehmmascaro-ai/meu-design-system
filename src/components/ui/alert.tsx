@@ -19,9 +19,9 @@ const alertVariants = cva("", {
       brand:   "bg-bg-brand-softer            text-text-fg-brand-strong    border-border-brand-subtle",
     },
     type: {
-      default:      "flex items-center gap-2 p-4 rounded-fig border",
-      complex:      "flex flex-col gap-4 p-4 rounded-fig border",
-      small:        "inline-flex items-center gap-2 rounded-full border pl-1 pr-2 py-1",
+      default:      "flex items-center gap-2 p-4 rounded-fig border-1",
+      complex:      "flex flex-col gap-4 p-4 rounded-fig border-1",
+      small:        "inline-flex items-center gap-2 rounded-full border-1 pl-1 pr-2 py-1",
       "border-top": "flex items-center gap-2 p-4 border-t-4",
     },
   },
