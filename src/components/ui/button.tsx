@@ -13,13 +13,13 @@ const buttonVariants = cva(
         /* ── Variantes do Figma ── */
         brand:
           // disabled: adiciona borda border-default-medium (Figma: bg-disabled + border-default-medium + text-fg-disabled)
-          "bg-bg-brand text-text-white hover:bg-bg-brand-strong disabled:bg-bg-disabled disabled:border disabled:border-border-default-medium disabled:text-text-fg-disabled focus-visible:ring-bg-brand/40",
+          "bg-bg-brand text-text-white hover:bg-bg-brand-strong disabled:bg-bg-disabled disabled:border-1 disabled:border-border-default-medium disabled:text-text-fg-disabled focus-visible:ring-bg-brand/40",
 
         secondary:
-          "bg-bg-neutral-secondary-medium text-text-body border border-border-default-medium hover:bg-bg-neutral-tertiary disabled:bg-bg-disabled disabled:text-text-fg-disabled focus-visible:ring-border-default",
+          "bg-bg-neutral-secondary-medium text-text-body border-1 border-border-default-medium hover:bg-bg-neutral-tertiary disabled:bg-bg-disabled disabled:text-text-fg-disabled focus-visible:ring-border-default",
 
         tertiary:
-          "bg-bg-neutral-primary-soft text-text-body border border-border-default hover:bg-bg-neutral-secondary disabled:bg-bg-disabled disabled:text-text-fg-disabled focus-visible:ring-border-default",
+          "bg-bg-neutral-primary-soft text-text-body border-1 border-border-default hover:bg-bg-neutral-secondary disabled:bg-bg-disabled disabled:text-text-fg-disabled focus-visible:ring-border-default",
 
         success:
           "bg-bg-success text-text-white hover:bg-bg-success-strong disabled:bg-bg-disabled disabled:text-text-fg-disabled focus-visible:ring-bg-success/40",
@@ -45,7 +45,7 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
         outline:
-          "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
+          "border-1 bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
         "secondary-shadcn":
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         "ghost-shadcn":
@@ -55,6 +55,10 @@ const buttonVariants = cva(
       },
       outline: {
         true: "",
+        false: "",
+      },
+      active: {
+        true:  "",
         false: "",
       },
       size: {
@@ -73,35 +77,48 @@ const buttonVariants = cva(
       },
     },
     compoundVariants: [
+      // ── Active (só secondary e tertiary por enquanto) ──────────────────────
+      {
+        variant: "secondary",
+        active: true,
+        class: "bg-bg-neutral-tertiary-medium text-text-fg-brand",
+      },
+      {
+        variant: "tertiary",
+        active: true,
+        class: "bg-bg-neutral-secondary-medium text-text-fg-brand",
+      },
+      // ── Outline ───────────────────────────────────────────────────────────
       {
         variant: "success",
         outline: true,
         class:
-          "bg-transparent border border-border-success text-text-fg-success hover:bg-bg-success-strong hover:text-text-white disabled:bg-bg-disabled disabled:border-border-default-medium disabled:text-text-fg-disabled focus-visible:ring-border-success/40",
+          "bg-transparent border-1 border-border-success text-text-fg-success hover:bg-bg-success-strong hover:text-text-white disabled:bg-bg-disabled disabled:border-border-default-medium disabled:text-text-fg-disabled focus-visible:ring-border-success/40",
       },
       {
         variant: "danger",
         outline: true,
         class:
-          "bg-transparent border border-border-danger text-text-fg-danger hover:bg-bg-danger-strong hover:text-text-white disabled:bg-bg-disabled disabled:border-border-default-medium disabled:text-text-fg-disabled focus-visible:ring-border-danger/40",
+          "bg-transparent border-1 border-border-danger text-text-fg-danger hover:bg-bg-danger-strong hover:text-text-white disabled:bg-bg-disabled disabled:border-border-default-medium disabled:text-text-fg-disabled focus-visible:ring-border-danger/40",
       },
       {
         variant: "warning",
         outline: true,
         class:
-          "bg-transparent border border-border-warning text-text-fg-warning-subtle hover:bg-bg-warning-strong hover:text-text-white disabled:bg-bg-disabled disabled:border-border-default-medium disabled:text-text-fg-disabled focus-visible:ring-border-warning/40",
+          "bg-transparent border-1 border-border-warning text-text-fg-warning-subtle hover:bg-bg-warning-strong hover:text-text-white disabled:bg-bg-disabled disabled:border-border-default-medium disabled:text-text-fg-disabled focus-visible:ring-border-warning/40",
       },
       {
         variant: "info",
         outline: true,
         class:
-          "bg-transparent border border-border-blue text-text-fg-infos hover:bg-bg-info-strong hover:text-text-white disabled:bg-bg-disabled disabled:border-border-default-medium disabled:text-text-fg-disabled focus-visible:ring-border-blue/40",
+          "bg-transparent border-1 border-border-blue text-text-fg-infos hover:bg-bg-info-strong hover:text-text-white disabled:bg-bg-disabled disabled:border-border-default-medium disabled:text-text-fg-disabled focus-visible:ring-border-blue/40",
       },
     ],
     defaultVariants: {
       variant: "brand",
-      size: "default",
+      size:    "default",
       outline: false,
+      active:  false,
     },
   }
 )
@@ -111,6 +128,7 @@ function Button({
   variant = "brand",
   size = "default",
   outline = false,
+  active = false,
   asChild = false,
   ...props
 }: React.ComponentProps<"button"> &
@@ -124,7 +142,7 @@ function Button({
       data-slot="button"
       data-variant={variant}
       data-size={size}
-      className={cn(buttonVariants({ variant, size, outline, className }))}
+      className={cn(buttonVariants({ variant, size, outline, active, className }))}
       {...props}
     />
   )
