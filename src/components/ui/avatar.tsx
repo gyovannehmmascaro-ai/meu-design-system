@@ -14,10 +14,10 @@ type AvatarGroupSize = "sm" | "base" | "lg"
 
 // Tamanho do container — spacing tokens do Figma (xs usa valor fixo pois não há token exato)
 const avatarSizeClass: Record<AvatarSize, string> = {
-  "xs":  "size-[18px]",
+  "xs":  "size-4.5", // spacing-4.5 = 18px
   "sm":  "size-6",   // spacing-6 = 24px
   "base":"size-8",   // spacing-8 = 32px — padrão
-  "lg":  "size-11",  // spacing-11 = 44px
+  "lg":  "size-12",  // spacing-12 = 48px
   "xl":  "size-14",  // spacing-14 = 56px
   "2xl": "size-16",  // spacing-16 = 64px
 }
@@ -309,10 +309,10 @@ function AvatarGroupLabel({
   size?: "sm" | "base" | "lg" | "xl"
 }) {
   const labelConfig = {
-    sm:   { avatarSize: "sm" as AvatarSize, gap: "gap-1.5", innerGap: "gap-0.5", nameSize: "text-xs",  helperSize: "text-xs"  },
-    base: { avatarSize: "base"as AvatarSize, gap: "gap-2",   innerGap: "gap-1.5", nameSize: "text-base", helperSize: "text-sm"  },
-    lg:   { avatarSize: "lg" as AvatarSize, gap: "gap-2.5", innerGap: "gap-1.5", nameSize: "text-base", helperSize: "text-base"},
-    xl:   { avatarSize: "xl" as AvatarSize, gap: "gap-2.5", innerGap: "gap-1.5", nameSize: "text-xl",  helperSize: "text-lg"  },
+    sm:   { avatarSize: "sm" as AvatarSize,   gap: "gap-1.5", innerGap: "gap-1",   nameSize: "text-xs",   nameLeading: "leading-3",   helperSize: "text-xs",   helperLeading: "leading-3"   },
+    base: { avatarSize: "base" as AvatarSize, gap: "gap-2",   innerGap: "gap-1",   nameSize: "text-base", nameLeading: "leading-4",   helperSize: "text-sm",   helperLeading: "leading-3-5" },
+    lg:   { avatarSize: "lg" as AvatarSize,   gap: "gap-2.5", innerGap: "gap-1.5", nameSize: "text-base", nameLeading: "leading-4",   helperSize: "text-base", helperLeading: "leading-4"   },
+    xl:   { avatarSize: "xl" as AvatarSize,   gap: "gap-2.5", innerGap: "gap-1.5", nameSize: "text-xl",   nameLeading: "leading-5",   helperSize: "text-lg",   helperLeading: "leading-4-5" },
   }
   const cfg = labelConfig[size]
 
@@ -326,11 +326,11 @@ function AvatarGroupLabel({
         {children}
       </Avatar>
       <div className={cn("flex flex-col", cfg.innerGap)}>
-        <span className={cn("font-base font-medium text-text-heading leading-tight", cfg.nameSize)}>
+        <span className={cn("font-base font-semibold text-text-heading", cfg.nameSize, cfg.nameLeading)}>
           {name}
         </span>
         {helper && (
-          <span className={cn("font-base font-normal text-text-body leading-tight", cfg.helperSize)}>
+          <span className={cn("font-base font-normal text-text-body", cfg.helperSize, cfg.helperLeading)}>
             {helper}
           </span>
         )}

@@ -6,7 +6,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 
 // ── Variantes base (badges com texto) ─────────────────────────────────────
 const badgeVariants = cva(
-  "inline-flex items-center justify-center gap-1 border-1 border-solid font-medium whitespace-nowrap rounded-fig-sm leading-4 [&_svg]:pointer-events-none [&_svg]:shrink-0 shrink-0",
+  "inline-flex items-center justify-center gap-1 border-1 border-solid font-medium whitespace-nowrap rounded-fig-sm [&_svg]:pointer-events-none [&_svg]:shrink-0 shrink-0",
   {
     variants: {
       theme: {
@@ -19,8 +19,8 @@ const badgeVariants = cva(
         info:    "bg-bg-info-softer          text-text-fg-infos-strong   border-border-blue-subtle",
       },
       size: {
-        sm: "px-1 py-0.5 text-xs [&_svg:not([class*='size-'])]:size-3",
-        lg: "px-1.5 py-1 text-sm [&_svg:not([class*='size-'])]:size-3.5",
+        sm: "px-1 py-0.5 text-xs leading-4 [&_svg:not([class*='size-'])]:size-3",
+        lg: "px-1.5 py-1 text-sm leading-4 [&_svg:not([class*='size-'])]:size-3.5",
       },
     },
     defaultVariants: { theme: "gray", size: "sm" },
