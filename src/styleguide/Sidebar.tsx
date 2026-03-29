@@ -1,4 +1,4 @@
-type Page = "colors" | "typography" | "logo" | "button" | "button-group" | "badge" | "spinner" | "avatar" | "accordion" | "banner" | "alert" | "shadcn-components"
+type Page = "colors" | "typography" | "logo" | "button" | "button-group" | "badge" | "spinner" | "avatar" | "accordion" | "banner" | "alert" | "breadcrumb" | "shadcn-components"
 
 interface SidebarProps {
   activePage: Page
@@ -24,7 +24,8 @@ const nav: { group: string; items: { id: Page; label: string }[] }[] = [
       { id: "avatar",    label: "Avatar"    },
       { id: "accordion", label: "Accordion" },
       { id: "banner",    label: "Banner"    },
-      { id: "alert",     label: "Alert"     },
+      { id: "alert",       label: "Alert"       },
+      { id: "breadcrumb",  label: "Breadcrumb"  },
     ],
   },
   {

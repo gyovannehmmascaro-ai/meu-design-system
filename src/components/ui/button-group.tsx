@@ -25,12 +25,25 @@ const sizeMap = {
   lg:   "lg",
 } as const
 
+// Tamanhos quadrados (sem padding) usados quando o item contém só ícone
+const iconSizeMap = {
+  xs:   "icon-xs",
+  sm:   "icon-sm",
+  base: "icon",
+  lg:   "icon-lg",
+} as const
+
 interface ButtonGroupItemProps
   extends Omit<React.ComponentProps<typeof Button>, "size" | "color"> {
   /** Identificador único do item — necessário para o estado ativo. */
   value?: string
   color?: "white" | "gray"
   size?:  "xs" | "sm" | "base" | "lg"
+  /**
+   * Quando true, usa tamanho quadrado sem padding (ex: sm → 36×36 px).
+   * Use em itens que contêm apenas um ícone.
+   */
+  iconOnly?: boolean
 }
 
 function ButtonGroupItem({
@@ -39,6 +52,7 @@ function ButtonGroupItem({
   size,
   variant,
   value,
+  iconOnly = false,
   onClick,
   ...props
 }: ButtonGroupItemProps) {
@@ -55,13 +69,14 @@ function ButtonGroupItem({
   return (
     <Button
       variant={resolvedVariant}
-      size={sizeMap[resolvedSize]}
+      size={iconOnly ? iconSizeMap[resolvedSize] : sizeMap[resolvedSize]}
       active={isActive}
       aria-pressed={isActive ? true : undefined}
       onClick={(e) => {
         if (value !== undefined) ctx.onValueChange?.(value)
         onClick?.(e)
       }}
+      data-icon-only={iconOnly || undefined}
       className={cn(className)}
       {...props}
     />
@@ -125,7 +140,7 @@ function ButtonGroup({
           "[&>[data-slot=button]:focus-visible]:z-10",
 
           // Itens ocupam a largura total do container no modo vertical.
-          isVertical && "[&>[data-slot=button]]:w-full",
+          isVertical && "[&>[data-slot=button]:not([data-icon-only])]:w-full",
 
           className
         )}
