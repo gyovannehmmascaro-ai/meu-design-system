@@ -146,14 +146,20 @@
 
   /* ── Line Height — uso: leading-4, leading-6... ── */
   --leading-none:                      var(--primitive-leading-none);
-  --leading-3:                         var(--primitive-leading-3);
-  --leading-4:                         var(--primitive-leading-4);
-  --leading-5:                         var(--primitive-leading-5);
-  --leading-6:                         var(--primitive-leading-6);
-  --leading-7:                         var(--primitive-leading-7);
-  --leading-8:                         var(--primitive-leading-8);
-  --leading-9:                         var(--primitive-leading-9);
-  --leading-10:                        var(--primitive-leading-10);
+  --leading-0-5:                       var(--primitive-spacing-0-5);
+  --leading-1:                         var(--primitive-spacing-1);
+  --leading-1-5:                       var(--primitive-spacing-1-5);
+  --leading-2:                         var(--primitive-spacing-2);
+  --leading-2-5:                       var(--primitive-spacing-2-5);
+  --leading-3:                         var(--primitive-spacing-3);
+  --leading-3-5:                       var(--primitive-spacing-3-5);
+  --leading-4:                         var(--primitive-spacing-4);
+  --leading-4-5:                       var(--primitive-spacing-4-5);
+  --leading-5:                         var(--primitive-spacing-5);
+  --leading-6:                         var(--primitive-spacing-6);
+  --leading-7:                         var(--primitive-spacing-7);
+  --leading-8:                         var(--primitive-spacing-8);
+  --leading-9:                         var(--primitive-spacing-9);
   --leading-heading:                   var(--primitive-leading-heading);
 
   /* ── Letter Spacing — uso: tracking-tight, tracking-wide... ── */

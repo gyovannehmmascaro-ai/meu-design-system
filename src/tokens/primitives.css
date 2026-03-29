@@ -384,6 +384,8 @@
 
   /* Line Height */
   --primitive-leading-none:       1;
+  --primitive-leading-1:          4px;
+  --primitive-leading-2:          8px;
   --primitive-leading-3:          12px;
   --primitive-leading-4:          16px;
   --primitive-leading-5:          20px;
