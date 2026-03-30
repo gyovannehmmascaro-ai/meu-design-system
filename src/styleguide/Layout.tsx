@@ -13,8 +13,9 @@ import { BannerPage } from "./pages/BannerPage"
 import { AlertPage } from "./pages/AlertPage"
 import { ButtonGroupPage } from "./pages/ButtonGroupPage"
 import { BreadcrumbPage } from "./pages/BreadcrumbPage"
+import { TabsPage } from "./pages/TabsPage"
 
-type Page = "colors" | "typography" | "logo" | "button" | "button-group" | "badge" | "spinner" | "avatar" | "accordion" | "banner" | "alert" | "breadcrumb" | "shadcn-components"
+type Page = "colors" | "typography" | "logo" | "button" | "button-group" | "badge" | "spinner" | "avatar" | "accordion" | "banner" | "alert" | "breadcrumb" | "tabs" | "shadcn-components"
 
 const pageTitles: Record<Page, string> = {
   "colors":             "Colors",
@@ -29,6 +30,7 @@ const pageTitles: Record<Page, string> = {
   "alert":              "Alert",
   "button-group":       "Button Group",
   "breadcrumb":         "Breadcrumb",
+  "tabs":               "Tabs",
   "shadcn-components":  "Shadcn Components",
 }
 
@@ -55,6 +57,7 @@ export function StyleguideLayout() {
           {activePage === "alert"             && <AlertPage />}
           {activePage === "button-group"      && <ButtonGroupPage />}
           {activePage === "breadcrumb"        && <BreadcrumbPage />}
+          {activePage === "tabs"              && <TabsPage />}
           {activePage === "shadcn-components" && <ShadcnComponents />}
         </main>
       </div>
