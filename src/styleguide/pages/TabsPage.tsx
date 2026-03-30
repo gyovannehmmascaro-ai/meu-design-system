@@ -6,9 +6,7 @@ import {
   GearIcon,
   BellIcon,
   ChartBarIcon,
-  LockIcon,
   ArrowRightIcon,
-  ArrowLeftIcon,
 } from "@phosphor-icons/react"
 
 export function TabsPage() {
