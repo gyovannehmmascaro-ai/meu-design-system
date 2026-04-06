@@ -8,9 +8,7 @@ import {
   EyeIcon,
   EyeSlashIcon,
   LockIcon,
-  EnvelopeIcon,
   BedIcon,
-  WarningIcon,
 } from "@phosphor-icons/react"
 import { useState } from "react"
 
