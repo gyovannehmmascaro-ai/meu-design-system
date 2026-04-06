@@ -87,12 +87,15 @@ const inputBoxVariants = cva(
 
 // ── Tipos ─────────────────────────────────────────────────────────────────────
 
-export type InputIntent = "default" | "success" | "danger"
+export type InputIntent = Exclude<
+  VariantProps<typeof inputWrapperVariants>["intent"],
+  "disabled" | "readonly" | null | undefined
+>
 
 export interface InputProps
   extends Omit<React.ComponentProps<"input">, "size"> {
   /** Tamanho visual do input */
-  size?: "sm" | "base" | "lg" | "xl"
+  size?: VariantProps<typeof inputWrapperVariants>["size"]
   /** Estado de validação externo */
   intent?: InputIntent
   /** Ícone à esquerda (Default type) */
@@ -344,4 +347,4 @@ function Input({
   )
 }
 
-export { Input, inputWrapperVariants }
+export { Input }
