@@ -139,6 +139,8 @@ function Input({
   ...props
 }: InputProps) {
   // Estado interno para clearable
+  const inputRef = React.useRef<HTMLInputElement>(null)
+
   const [internalValue, setInternalValue] = React.useState(defaultValue ?? "")
   const isControlled = value !== undefined
   const currentValue = isControlled ? value : internalValue
@@ -150,16 +152,12 @@ function Input({
 
   function handleClear() {
     if (!isControlled) setInternalValue("")
-    // Dispara onChange sintético para componentes controlados
-    const nativeInput = inputRef.current
-    if (nativeInput) {
-      Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value")
-        ?.set?.call(nativeInput, "")
-      nativeInput.dispatchEvent(new Event("input", { bubbles: true }))
+    if (onChange && inputRef.current) {
+      const nativeInputValueSetter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value")?.set
+      nativeInputValueSetter?.call(inputRef.current, "")
+      inputRef.current.dispatchEvent(new Event("change", { bubbles: true }))
     }
   }
-
-  const inputRef = React.useRef<HTMLInputElement>(null)
 
   // Efective intent para CVA
   const effectiveIntent = disabled ? "disabled" : readOnly ? "readonly" : intent
@@ -218,7 +216,7 @@ function Input({
         />
         <div className={cn("flex items-center gap-0.5", iconColorClass)}>
           {stackedIcon && (
-            <span className={cn("shrink-0 cursor-pointer", trailingIconSize, iconColorClass)}>
+            <span className={cn("shrink-0", trailingIconSize, iconColorClass)}>
               {stackedIcon}
             </span>
           )}
@@ -239,8 +237,7 @@ function Input({
         className={cn(
           "group flex items-stretch border-1 rounded-fig-base transition-colors overflow-hidden",
           {
-            default:
-              "bg-bg-neutral-secondary-medium border-border-default-medium focus-within:border-border-brand",
+            default:  "bg-bg-neutral-secondary-medium border-border-default-medium focus-within:border-border-brand",
             success:  "bg-bg-success-soft border-border-success-subtle",
             danger:   "bg-bg-danger-soft border-border-danger-subtle",
             disabled: "bg-bg-neutral-secondary-medium border-border-default-medium cursor-not-allowed",
@@ -277,7 +274,7 @@ function Input({
             <button
               type="button"
               onClick={handleClear}
-              tabIndex={-1}
+              aria-label="Limpar"
               className={cn("shrink-0 cursor-pointer", trailingIconSize, iconColorClass)}
             >
               {trailingIcon}
@@ -323,7 +320,7 @@ function Input({
         <button
           type="button"
           onClick={handleClear}
-          tabIndex={-1}
+          aria-label="Limpar"
           className={cn("shrink-0 cursor-pointer", trailingIconSize, iconColorClass)}
         >
           {trailingIcon}

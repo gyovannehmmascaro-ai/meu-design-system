@@ -9,6 +9,8 @@ import {
   EyeSlashIcon,
   LockIcon,
   BedIcon,
+  ArrowLeftIcon,
+  ArrowRightIcon,
 } from "@phosphor-icons/react"
 import { useState } from "react"
 
@@ -110,7 +112,7 @@ export function InputPage() {
             leadingIcon={<UserIcon weight="bold" />}
             trailingButton={
               <Button variant="tertiary" size="xs">
-                <XIcon weight="bold" /> Button text
+                <ArrowLeftIcon weight="bold" /> Button text <ArrowRightIcon weight="bold" />
               </Button>
             }
           />
