@@ -16,8 +16,9 @@ import { BreadcrumbPage } from "./pages/BreadcrumbPage"
 import { TabsPage } from "./pages/TabsPage"
 import { InputPage } from "./pages/InputPage"
 import { FieldLabelPage } from "./pages/FieldLabelPage"
+import { ProgressBarPage } from "./pages/ProgressBarPage"
 
-type Page = "colors" | "typography" | "logo" | "button" | "button-group" | "badge" | "spinner" | "avatar" | "accordion" | "banner" | "alert" | "breadcrumb" | "tabs" | "input" | "field-label" | "shadcn-components"
+type Page = "colors" | "typography" | "logo" | "button" | "button-group" | "badge" | "spinner" | "avatar" | "accordion" | "banner" | "alert" | "breadcrumb" | "tabs" | "input" | "field-label" | "progress-bar" | "shadcn-components"
 
 const pageTitles: Record<Page, string> = {
   "colors":             "Colors",
@@ -35,6 +36,7 @@ const pageTitles: Record<Page, string> = {
   "tabs":               "Tabs",
   "input":              "Input",
   "field-label":        "Field Label",
+  "progress-bar":       "Progress Bar",
   "shadcn-components":  "Shadcn Components",
 }
 
@@ -64,6 +66,7 @@ export function StyleguideLayout() {
           {activePage === "tabs"              && <TabsPage />}
           {activePage === "input"             && <InputPage />}
           {activePage === "field-label"       && <FieldLabelPage />}
+          {activePage === "progress-bar"      && <ProgressBarPage />}
           {activePage === "shadcn-components" && <ShadcnComponents />}
         </main>
       </div>
