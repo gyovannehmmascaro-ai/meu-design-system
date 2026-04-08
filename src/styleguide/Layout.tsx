@@ -20,8 +20,9 @@ import { ProgressBarPage } from "./pages/ProgressBarPage"
 import { HelperTextPage } from "./pages/HelperTextPage"
 import { PasswordStrengthPage } from "./pages/PasswordStrengthPage"
 import { InputGroupPage } from "./pages/InputGroupPage"
+import { InputFieldPage } from "./pages/InputFieldPage"
 
-type Page = "colors" | "typography" | "logo" | "button" | "button-group" | "badge" | "spinner" | "avatar" | "accordion" | "banner" | "alert" | "breadcrumb" | "tabs" | "input" | "field-label" | "progress-bar" | "helper-text" | "password-strength" | "input-group" | "shadcn-components"
+type Page = "colors" | "typography" | "logo" | "button" | "button-group" | "badge" | "spinner" | "avatar" | "accordion" | "banner" | "alert" | "breadcrumb" | "tabs" | "input" | "field-label" | "progress-bar" | "helper-text" | "password-strength" | "input-group" | "input-field" | "shadcn-components"
 
 const pageTitles: Record<Page, string> = {
   "colors":             "Colors",
@@ -43,6 +44,7 @@ const pageTitles: Record<Page, string> = {
   "helper-text":        "Helper Text",
   "password-strength":  "Password Strength",
   "input-group":        "Input Group",
+  "input-field":        "Input Field",
   "shadcn-components":  "Shadcn Components",
 }
 
@@ -76,6 +78,7 @@ export function StyleguideLayout() {
           {activePage === "helper-text"        && <HelperTextPage />}
           {activePage === "password-strength" && <PasswordStrengthPage />}
           {activePage === "input-group"       && <InputGroupPage />}
+          {activePage === "input-field"       && <InputFieldPage />}
           {activePage === "shadcn-components" && <ShadcnComponents />}
         </main>
       </div>
