@@ -1,4 +1,4 @@
-type Page = "colors" | "typography" | "logo" | "button" | "button-group" | "badge" | "spinner" | "avatar" | "accordion" | "banner" | "alert" | "breadcrumb" | "tabs" | "input" | "field-label" | "progress-bar" | "shadcn-components"
+type Page = "colors" | "typography" | "logo" | "button" | "button-group" | "badge" | "spinner" | "avatar" | "accordion" | "banner" | "alert" | "breadcrumb" | "tabs" | "input" | "field-label" | "progress-bar" | "helper-text" | "shadcn-components"
 
 interface SidebarProps {
   activePage: Page
@@ -30,6 +30,7 @@ const nav: { group: string; items: { id: Page; label: string }[] }[] = [
       { id: "input",       label: "Input"       },
       { id: "field-label",  label: "Field Label"  },
       { id: "progress-bar", label: "Progress Bar" },
+      { id: "helper-text",  label: "Helper Text"  },
     ],
   },
   {
