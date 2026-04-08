@@ -1,4 +1,4 @@
-type Page = "colors" | "typography" | "logo" | "button" | "button-group" | "badge" | "spinner" | "avatar" | "accordion" | "banner" | "alert" | "breadcrumb" | "tabs" | "input" | "field-label" | "progress-bar" | "helper-text" | "password-strength" | "shadcn-components"
+type Page = "colors" | "typography" | "logo" | "button" | "button-group" | "badge" | "spinner" | "avatar" | "accordion" | "banner" | "alert" | "breadcrumb" | "tabs" | "input" | "field-label" | "progress-bar" | "helper-text" | "password-strength" | "input-group" | "shadcn-components"
 
 interface SidebarProps {
   activePage: Page
@@ -32,6 +32,7 @@ const nav: { group: string; items: { id: Page; label: string }[] }[] = [
       { id: "progress-bar", label: "Progress Bar" },
       { id: "helper-text",       label: "Helper Text"       },
       { id: "password-strength", label: "Password Strength" },
+      { id: "input-group",       label: "Input Group"       },
     ],
   },
   {
