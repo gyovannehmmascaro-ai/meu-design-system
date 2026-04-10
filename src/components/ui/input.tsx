@@ -171,10 +171,9 @@ function Input({
     readonly: "text-text-body",
   }[effectiveIntent]
 
-  // Tamanho dos ícones: leading = size-4 (sm/base) ou size-5 (lg/xl)
+  // Tamanho dos ícones: size-4 (sm/base) ou size-5 (lg/xl)
   const leadingIconSize  = size === "lg" || size === "xl" ? "size-5" : "size-4"
-  // Trailing sempre size-4 (intencional no Figma)
-  const trailingIconSize = "size-4"
+  const trailingIconSize = size === "lg" || size === "xl" ? "size-5" : "size-4"
 
   // Cor e tamanho do texto do input
   const inputTextClass = cn(
